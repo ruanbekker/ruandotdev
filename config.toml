@@ -1,0 +1,70 @@
+baseURL = "https://ruan.dev/"
+languageCode = "en-us"
+title = "Ruan Bekker"
+theme = "introduction"
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+[permalinks]
+fixed = ":title/"
+blog  = "blog/:filename/"
+
+[params]
+author = "Ruan Bekker"
+firstname = "Ruan"
+tagline = "Systems Development Engineer, DevOps, Linux, AWS, Python"
+avatar = "img/about-ruan-bekker.png"
+dateform = "Jan 2, 2006"
+dateformfull = "Mon January 2 2006"
+cachebuster = true
+description = "Ruan's Home Page"
+# faviconfile = "img/fav.ico"
+#email = "ruan@ruanbekker.com"
+highlightjs = true
+lang = "en"
+timeZone = "Africa/Johannesburg"
+footertext = ""
+
+# Social icons appear in introduction and contact section. Input your username only, eg "you" as it appears in "twitter.com/you"
+linkedin      = "ruanbekker/"
+twitter       = "ruanbekker"
+github        = "ruanbekker"
+#codepen       = ""
+#pinterest     = ""
+facebook      = "ruan.bekker"
+email         = "ruan@ruanbekker.com"
+
+showblog        = true # Show Blog section on home page
+showallposts    = false # Set 'true' to list all posts on home page, or set 'false' to link to separate blog list page
+showlatest      = true # Show latest blog post summary
+sharebuttons    = true # On post pages, show share this social buttons
+
+showprojects    = true # Show Projects section on home page
+
+# This is your projects section. Three images of the same dimensions will look the nicest. If images are omitted, text links will be shown.
+project1link    = "https://github.com/bekkerstacks"
+project1img     = "img/projects-bekkerstacks.png"
+project1title   = "Bekker Stacks"
+project1desc    = "Initiative that I started to have multiple repositories for various Docker Swarm Stacks, which you can just clone and deploy"
+
+project2link    = "https://blog.ruanbekker.com/?source=ruan.dev"
+project2img     = "img/projects-blog-ruanbekker-com.png"
+project2title   = "My Main Tech Blog: blog.ruanbekker.com"
+
+project2desc    = "Tech things I stumble across which involves mainly around AWS, Linux, DevOps, Systems Development Engineering, Automation, Containers, Servers, etc"
+
+project3link    = "https://sysadmins.co.za"
+project3img     = "img/projects-sysadmins-co-za.png"
+project3title   = "Tech Blog: sysadmins.co.za"
+project3desc    = "Linux, Systems Administration and Howto Blog on Building Servers and Systems"
+
+project4link    = "https://github.com/ruanbekker/elasticsearch-demo"
+project4img     = "img/projects-elasticsearch-tutorial.png"
+project4title   = "Elasticsearch Hands-On Course"
+project4desc    = "A work-in-progress Elasticsearch hands-on tutorial, from installing, ingesting, searching, aggregations, management etc."
+
+project5link    = "https://github.com/ruanbekker/golang-aws-secret-store"
+project5img     = "img/projects-golang-aws-secret-store.png"
+project5title   = "AWS Secret Store with Golang"
+project5desc    = "AWS Secret Store using S3, KMS and IAM written in Golang"
