@@ -14,10 +14,10 @@ steps:
         from_secret: swarm_key
       user:
         from_secret: swarm_user
-    source: ./*
-    target: /tmp/ruan.dev
-    recursive: true
-    delete: true
+      source: ./*
+      target: /tmp/ruan.dev
+      recursive: true
+      delete: true
 
 #  transfer-compose-to-swarm:
 #    image: appleboy/drone-scp
