@@ -1,4 +1,6 @@
-[![Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev)
+
+
+# ruan.dev - [![Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev)
 
 Create Blog Home:
 
