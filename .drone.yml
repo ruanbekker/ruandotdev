@@ -40,8 +40,8 @@ steps:
       branch: [master]
       event: [push]
     environment:
-      DOMAIN:
-        from_secret: domain
+      APP_DOMAIN:
+        from_secret: app_domain
     settings:
       host:
         from_secret: swarm_host
@@ -50,7 +50,7 @@ steps:
       key:
         from_secret: swarm_key
       port: 22
-      envs: [domain]
+      envs: [app_domain]
       script:
       - bash /tmp/ruan.dev/deploy.sh
     
