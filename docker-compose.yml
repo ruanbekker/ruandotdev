@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  ruandotdev:
+    image: ruanbekker/ruandotdev:v1
+    networks:
+      - public
+    environment:
+      - GITHUB_URL=https://github.com/ruanbekker/ruandotdev
+      - PROJECT_PATH=/app
+      - PROJECT_URL=https://${DOMAIN:-localhost}
+      - HUGO_THEME=introduction
+      - LOGSTASH_TAGS=blogs
+      - LOGSTASH_FIELDS=service.name={{.Service.Name}},task.id={{.Task.ID}},node.name={{.Node.Hostname}},stack.name={{index .Service.Labels "com.docker.stack.namespace"}}
+      - DOCKER_LABELS=on
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - traefik.frontend.rule=Host:${DOMAIN:-localhost}
+        - traefik.enable=true
+        - traefik.port=8080
+        - traefik.tags=public
+        - traefik.backend=ruandotdev
+        - traefik.docker.network=public
+        - traefik.redirectorservice.frontend.entryPoints=http
+        - traefik.redirectorservice.frontend.redirect.entryPoint=https
+        - traefik.webservice.frontend.entryPoints=https
+      resources:
+        limits:
+          memory: 128M
+
+networks:
+  public:
+    external: true
