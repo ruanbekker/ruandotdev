@@ -15,20 +15,20 @@ pipeline:
       branch: [master]
       event: [push]
 
-  transfer-compose-to-swarm:
-    image: appleboy/drone-scp
-    host:
-      from_secret: swarm_host
-    username:
-      from_secret: swarm_user
-    key:
-      from_secret: swarm_key
-    target: /tmp/ruan.dev/my-weightloss-blog.com
-    source:
-      - docker-compose.yml
-    when:
-      branch: [master]
-      event: [push]
+#  transfer-compose-to-swarm:
+#    image: appleboy/drone-scp
+#    host:
+#      from_secret: swarm_host
+#    username:
+#      from_secret: swarm_user
+#    key:
+#      from_secret: swarm_key
+#    target: /tmp/ruan.dev/my-weightloss-blog.com
+#    source:
+#      - docker-compose.yml
+#    when:
+#      branch: [master]
+#      event: [push]
 
   deploy-hugo-to-swarm:
     image: appleboy/drone-ssh  
@@ -42,7 +42,7 @@ pipeline:
       from_secret: swarm_key
     port: 22
     script:
-      - docker stack deploy --prune -c /tmp/ruan.dev/docker-compose.yml blogs
+      - bash /tmp/ruan.dev/deploy.sh
     when:
       branch: [master]
       event: [push]
