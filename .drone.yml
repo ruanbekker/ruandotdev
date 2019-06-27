@@ -32,7 +32,7 @@ pipeline:
 
   deploy-hugo-to-swarm:
     image: appleboy/drone-ssh
-    DOMAIN:
+    domain:
       from_secret: domain
     host:
       from_secret: swarm_host
