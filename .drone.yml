@@ -42,6 +42,7 @@ pipeline:
     key:
       from_secret: swarm_key
     port: 22
+    envs: [domain]
     script:
       - bash /tmp/ruan.dev/deploy.sh
     when:
