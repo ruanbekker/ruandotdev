@@ -1,12 +1,16 @@
-pipeline:
-  transfer-content:
+kind: pipeline
+name: default
+
+steps:
+  - name: transfer-content:
     image: drillster/drone-rsync
-    hosts:
-      from_secret: swarm_host
-    key:
-      from_secret: swarm_key
-    user:
-      from_secret: swarm_user
+    settings:
+      hosts:
+        from_secret: swarm_host
+      key:
+        from_secret: swarm_key
+      user:
+        from_secret: swarm_user
     source: ./*
     target: /tmp/ruan.dev
     recursive: true
@@ -30,18 +34,19 @@ pipeline:
 #      branch: [master]
 #      event: [push]
 
-  deploy-hugo-to-swarm:
+  - name: deploy-hugo-to-swarm:
     image: appleboy/drone-ssh
     environment:
       DOMAIN:
         from_secret: domain
-    host:
-      from_secret: swarm_host
-    username:
-      from_secret: swarm_user
-    key:
-      from_secret: swarm_key
-    port: 22
+    settings:
+      host:
+        from_secret: swarm_host
+      username:
+        from_secret: swarm_user
+      key:
+        from_secret: swarm_key
+      port: 22
     envs: [domain]
     script:
       - bash /tmp/ruan.dev/deploy.sh
