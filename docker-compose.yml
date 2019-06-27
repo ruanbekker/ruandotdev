@@ -8,7 +8,7 @@ services:
     environment:
       - GITHUB_URL=https://github.com/ruanbekker/ruandotdev
       - PROJECT_PATH=/app
-      - PROJECT_URL=https://${DOMAIN:-localhost}
+      - PROJECT_URL=https://$${DOMAIN:-localhost}
       - HUGO_THEME=introduction
       - LOGSTASH_TAGS=blogs
       - LOGSTASH_FIELDS=service.name={{.Service.Name}},task.id={{.Task.ID}},node.name={{.Node.Hostname}},stack.name={{index .Service.Labels "com.docker.stack.namespace"}}
@@ -17,7 +17,7 @@ services:
       mode: replicated
       replicas: 1
       labels:
-        - traefik.frontend.rule=Host:${DOMAIN:-localhost}
+        - traefik.frontend.rule=Host:$${DOMAIN:-localhost}
         - traefik.enable=true
         - traefik.port=8080
         - traefik.tags=public
