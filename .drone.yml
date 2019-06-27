@@ -1,0 +1,49 @@
+pipeline:
+  transfer-content:
+    image: drillster/drone-rsync
+    hosts:
+      from_secret: swarm_host
+    key:
+      from_secret: swarm_key
+    user:
+      from_secret: swarm_user
+    source: ./*
+    target: /tmp/ruan.dev
+    recursive: true
+    delete: true
+    when:
+      branch: [master]
+      event: [push]
+
+  transfer-compose-to-swarm:
+    image: appleboy/drone-scp
+    host:
+      from_secret: swarm_host
+    username:
+      from_secret: swarm_user
+    key:
+      from_secret: swarm_key
+    target: /tmp/ruan.dev/my-weightloss-blog.com
+    source:
+      - docker-compose.yml
+    when:
+      branch: [master]
+      event: [push]
+
+  deploy-hugo-to-swarm:
+    image: appleboy/drone-ssh
+    environment:
+      DOMAIN:
+        from_secret: domain
+    host:
+      from_secret: swarm_host
+    username:
+      from_secret: swarm_user
+    key:
+      from_secret: swarm_key
+    port: 22
+    script:
+      - docker stack deploy --prune -c /root/ruan.dev/docker-compose.yml blogs
+    when:
+      branch: [master]
+      event: [push]
