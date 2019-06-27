@@ -4,6 +4,9 @@ name: default
 steps:
   - name: transfer-content:
     image: drillster/drone-rsync
+    when:
+      event: [push]
+      branch: [master]
     settings:
       hosts:
         from_secret: swarm_host
@@ -15,9 +18,6 @@ steps:
     target: /tmp/ruan.dev
     recursive: true
     delete: true
-    when:
-      branch: [master]
-      event: [push]
 
 #  transfer-compose-to-swarm:
 #    image: appleboy/drone-scp
@@ -36,6 +36,9 @@ steps:
 
   - name: deploy-hugo-to-swarm:
     image: appleboy/drone-ssh
+    when:
+      branch: [master]
+      event: [push]
     environment:
       DOMAIN:
         from_secret: domain
@@ -47,9 +50,7 @@ steps:
       key:
         from_secret: swarm_key
       port: 22
-    envs: [domain]
-    script:
+      envs: [domain]
+      script:
       - bash /tmp/ruan.dev/deploy.sh
-    when:
-      branch: [master]
-      event: [push]
+    
