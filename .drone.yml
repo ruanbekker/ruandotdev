@@ -19,21 +19,6 @@ steps:
       recursive: true
       delete: true
 
-#  transfer-compose-to-swarm:
-#    image: appleboy/drone-scp
-#    host:
-#      from_secret: swarm_host
-#    username:
-#      from_secret: swarm_user
-#    key:
-#      from_secret: swarm_key
-#    target: /tmp/ruan.dev/my-weightloss-blog.com
-#    source:
-#      - docker-compose.yml
-#    when:
-#      branch: [master]
-#      event: [push]
-
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
     when:
@@ -52,6 +37,6 @@ steps:
       port: 22
       envs: [app_domain]
       script:
-      - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
-      - bash /tmp/ruan.dev/deploy.sh
+        - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
+        - bash /tmp/ruan.dev/deploy.sh
     
