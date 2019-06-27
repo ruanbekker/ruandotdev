@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-  - name: transfer-content:
+  - name: transfer-content
     image: drillster/drone-rsync
     when:
       event: [push]
@@ -34,7 +34,7 @@ steps:
 #      branch: [master]
 #      event: [push]
 
-  - name: deploy-hugo-to-swarm:
+  - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
     when:
       branch: [master]
