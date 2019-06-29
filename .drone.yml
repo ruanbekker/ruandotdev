@@ -19,11 +19,12 @@ steps:
       recursive: true
       delete: true
 
-  - name: test
+  - name: dump-build-output
     image: alpine
+    environment:
+      MYCOMMIT: $$DRONE_COMMIT_SHA
     commands: 
-      - echo "running env"
-      - env
+      - echo "commit id: ${MYCOMMIT}"
 
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
