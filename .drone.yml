@@ -9,15 +9,15 @@ steps:
       APP_DOMAIN:
         from_secret: app_domain
     commands:
-      - echo DOMAIN=$${APP_DOMAIN} > $${BUILD_OUTPUT_FILE}
-      - echo CI_SYSTEM_HOST=$${DRONE_SYSTEM_HOST} >> $${BUILD_OUTPUT_FILE}
-      - echo CI_JOB_STARTED=$${CI_JOB_STARTED} >> $${BUILD_OUTPUT_FILE}
-      - echo CI_REPO_LINK=$${DRONE_REPO_LINK} >> $${BUILD_OUTPUT_FILE}
-      - echo CI_BUILD_RUNNER_HOST=$${DRONE_RUNNER_HOST} >> $${BUILD_OUTPUT_FILE}
-      - echo CI_BUILD_LINK=$${DRONE_BUILD_LINK} >> $${BUILD_OUTPUT_FILE}
-      - echo COMMIT_MESSAGE=$${DRONE_COMMIT_MESSAGE} >> $${BUILD_OUTPUT_FILE}
-      - echo COMMIT_ID=$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
-      - echo COMMIT_LINK=$${DRONE_REPO_LINK}/commit/$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
+      - echo export DOMAIN=$${APP_DOMAIN} > $${BUILD_OUTPUT_FILE}
+      - echo export CI_SYSTEM_HOST=$${DRONE_SYSTEM_HOST} >> $${BUILD_OUTPUT_FILE}
+      - echo export CI_JOB_STARTED=$${CI_JOB_STARTED} >> $${BUILD_OUTPUT_FILE}
+      - echo export CI_REPO_LINK=$${DRONE_REPO_LINK} >> $${BUILD_OUTPUT_FILE}
+      - echo export CI_BUILD_RUNNER_HOST=$${DRONE_RUNNER_HOST} >> $${BUILD_OUTPUT_FILE}
+      - echo export CI_BUILD_LINK=$${DRONE_BUILD_LINK} >> $${BUILD_OUTPUT_FILE}
+      - echo export COMMIT_MESSAGE=$${DRONE_COMMIT_MESSAGE} >> $${BUILD_OUTPUT_FILE}
+      - echo export COMMIT_ID=$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
+      - echo export COMMIT_LINK=$${DRONE_REPO_LINK}/commit/$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
       - ls -la
 
   - name: transfer-content
@@ -56,7 +56,7 @@ steps:
       port: 22
       envs: [app_domain, CI_JOB_FINISHED]
       script:
-        - echo $${CI_JOB_FINISHED} >> $$BUILD_OUTPUT_FILE 
+        - echo export $${CI_JOB_FINISHED} >> $$BUILD_OUTPUT_FILE 
         #- env #> /tmp/ruan.dev/env.sh
         #- sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
