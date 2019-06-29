@@ -13,6 +13,9 @@ services:
       - LOGSTASH_TAGS=blogs
       - LOGSTASH_FIELDS=service.name={{.Service.Name}},task.id={{.Task.ID}},node.name={{.Node.Hostname}},stack.name={{index .Service.Labels "com.docker.stack.namespace"}}
       - DOCKER_LABELS=on
+      - DRONE_COMMIT_SHA=${DRONE_COMMIT_SHA}
+      - DRONE_BUILD_LINK=${DRONE_BUILD_LINK}
+      - DRONE_COMMIT_LINK=${DRONE_COMMIT_LINK}
     deploy:
       mode: replicated
       replicas: 1
