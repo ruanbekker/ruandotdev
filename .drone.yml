@@ -5,17 +5,19 @@ steps:
   - name: dump-build-output
     image: alpine
     environment:
-      OWNER: ruan 
+      BUILD_OUTPUT_FILE: environment.sh
+      APP_DOMAIN:
+        from_secret: app_domain
     commands:
-      - env
-      - echo $${OWNER} > drone.owner
-      - echo $${DRONE_COMMIT_LINK} > drone.commit_link2
-      - echo $${DRONE_COMMIT} > drone.commit
-      - echo $${DRONE_STAGE_FINISHED} > drone.stage
-      - echo $${DRONE_REPO_NAME} > drone.reponame
-      - echo $${DRONE_COMMIT_LINK} > drone.commit_link
-      - echo owner=$${OWNER} > enviro.sh
-      - echo drone_commit=$${DRONE_COMMIT} >> enviro.sh
+      - echo DOMAIN=$${APP_DOMAIN > $${BUILD_OUTPUT_FILE}
+      - echo CI_SYSTEM_HOST=$${DRONE_SYSTEM_HOST} >> $${BUILD_OUTPUT_FILE}
+      - echo CI_JOB_STARTED=$${CI_JOB_STARTED} >> $${BUILD_OUTPUT_FILE}
+      - echo CI_REPO_LINK=$${DRONE_REPO_LINK} >> $${BUILD_OUTPUT_FILE}
+      - echo CI_BUILD_RUNNER_HOST=$${DRONE_RUNNER_HOST} >> $${BUILD_OUTPUT_FILE}
+      - echo CI_BUILD_LINK=$${DRONE_BUILD_LINK} >> $${BUILD_OUTPUT_FILE}
+      - echo COMMIT_MESSAGE=$${DRONE_COMMIT_MESSAGE} >> $${BUILD_OUTPUT_FILE}
+      - echo COMMIT_ID=$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
+      - echo COMMIT_LINK=$${DRONE_REPO_LINK}/commit/$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
       - ls -la
 
   - name: transfer-content
@@ -41,8 +43,7 @@ steps:
       branch: [master]
       event: [push]
     environment:
-      DRONE_COMMIT: $${DRONE_COMMIT}
-      DRONE_STAGE_FINISHED: $${DRONE_STAGE_FINISHED}
+      BUILD_OUTPUT_FILE: environment.sh
       APP_DOMAIN:
         from_secret: app_domain
     settings:
@@ -53,12 +54,9 @@ steps:
       key:
         from_secret: swarm_key
       port: 22
-      envs: [app_domain, DRONE_COMMIT, DRONE_STAGE_FINISHED, DRONE_REPO_NAME, DRONE_COMMIT_LINK]
+      envs: [app_domain, CI_JOB_FINISHED]
       script:
-        #- echo $${DRONE_COMMIT} > /tmp/ruan.dev/drone.id
-        #- echo $${DRONE_STAGE_FINISHED} > /tmp/ruan.dev/drone.stage
-        #- echo $${DRONE_REPO_NAME} > /tmp/ruan.dev/drone.reponame
-        #- echo $${DRONE_COMMIT_LINK} > /tmp/ruan.dev/drone.commit_link
-        - env #> /tmp/ruan.dev/env.sh
-        - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
+        - echo $${CI_JOB_FINISHED} >> $$BUILD_OUTPUT_FILE 
+        #- env #> /tmp/ruan.dev/env.sh
+        #- sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
