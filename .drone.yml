@@ -19,6 +19,12 @@ steps:
       recursive: true
       delete: true
 
+  - name: test
+    image: alpine
+    commands: 
+      - echo "running env"
+      - env
+
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
     when:
