@@ -8,7 +8,7 @@ PygmentsStyle = "monokai"
 
 [permalinks]
 fixed = ":title/"
-blog  = "blog/:filename/"
+blog  = "blog/:year/:month/:filename/"
 
 [params]
 author = "Ruan Bekker"
