@@ -22,11 +22,11 @@ steps:
   - name: dump-build-output
     image: alpine
     environment:
-      MYCOMMIT: ruan
+      COMMIT_ID: $${DRONE_COMMIT_LINK} 
     commands:
       - env
       - export
-      - echo $${MYCOMMIT}
+      - echo $${MYCOMMIT} > /tmp/ruan.dev/commit.id
 
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
