@@ -25,6 +25,9 @@ steps:
       branch: [master]
       event: [push]
     environment:
+      DRONE_BUILD_LINK: $$DRONE_BUILD_LINK
+      DRONE_COMMIT: $$DRONE_COMMIT
+      DRONE_COMMIT_LINK: $$DRONE_COMMIT_LINK
       APP_DOMAIN:
         from_secret: app_domain
     settings:
