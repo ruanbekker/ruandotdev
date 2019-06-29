@@ -2,6 +2,16 @@ kind: pipeline
 name: default
 
 steps:
+  - name: dump-build-output
+    image: alpine
+    environment:
+      COMMIT_ID: $${DRONE_COMMIT_LINK} 
+    commands:
+      - env
+      - export
+      - echo $${MYCOMMIT} > commit.id
+      - ls -la
+
   - name: transfer-content
     image: drillster/drone-rsync
     when:
@@ -19,25 +29,13 @@ steps:
       recursive: true
       delete: true
 
-  - name: dump-build-output
-    image: alpine
-    environment:
-      COMMIT_ID: $${DRONE_COMMIT_LINK} 
-    commands:
-      - env
-      - export
-      - echo $${MYCOMMIT} > commit.id
-      - ls -la
-
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
     when:
       branch: [master]
       event: [push]
     environment:
-      DRONE_BUILD_LINK: $$DRONE_BUILD_LINK
       DRONE_COMMIT: $$DRONE_COMMIT
-      DRONE_COMMIT_LINK: $$DRONE_COMMIT_LINK
       APP_DOMAIN:
         from_secret: app_domain
     settings:
@@ -50,12 +48,7 @@ steps:
       port: 22
       envs: [app_domain, DRONE_COMMIT]
       script:
-        - ls -la
+        - echo $$DRONE_COMMIT > /tmp/ruan.dev/newtest.id
         - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
-    #commands:
-    #  - ls -la
-    #  - env
-    #  - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
-    #  - bash /tmp/ruan.dev/deploy.sh
