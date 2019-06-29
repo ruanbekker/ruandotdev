@@ -7,10 +7,14 @@ steps:
     environment:
       OWNER: ruan 
     commands:
-      - env
-      - export
       - echo $${OWNER} > drone.owner
       - echo $${DRONE_COMMIT_LINK} > drone.commit_link2
+      - echo $${DRONE_COMMIT} > drone.commit
+      - echo $${DRONE_STAGE_FINISHED} > drone.stage
+      - echo $${DRONE_REPO_NAME} > drone.reponame
+      - echo $${DRONE_COMMIT_LINK} > drone.commit_link
+      - echo owner=$${OWNER} > enviro.sh
+      - echo drone_commit=$${DRONE_COMMIT} >> enviro.sh
       - ls -la
 
   - name: transfer-content
@@ -50,10 +54,10 @@ steps:
       port: 22
       envs: [app_domain, DRONE_COMMIT, DRONE_STAGE_FINISHED, DRONE_REPO_NAME, DRONE_COMMIT_LINK]
       script:
-        - echo $${DRONE_COMMIT} > /tmp/ruan.dev/drone.id
-        - echo $${DRONE_STAGE_FINISHED} > /tmp/ruan.dev/drone.stage
-        - echo $${DRONE_REPO_NAME} > /tmp/ruan.dev/drone.reponame
-        - echo $${DRONE_COMMIT_LINK} > /tmp/ruan.dev/drone.commit_link
+        #- echo $${DRONE_COMMIT} > /tmp/ruan.dev/drone.id
+        #- echo $${DRONE_STAGE_FINISHED} > /tmp/ruan.dev/drone.stage
+        #- echo $${DRONE_REPO_NAME} > /tmp/ruan.dev/drone.reponame
+        #- echo $${DRONE_COMMIT_LINK} > /tmp/ruan.dev/drone.commit_link
         - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
