@@ -36,6 +36,7 @@ steps:
       event: [push]
     environment:
       DRONE_COMMIT: $$DRONE_COMMIT
+      DRONE_STAGE_FINISHED: $$DRONE_STAGE_FINISHED
       APP_DOMAIN:
         from_secret: app_domain
     settings:
@@ -46,9 +47,9 @@ steps:
       key:
         from_secret: swarm_key
       port: 22
-      envs: [app_domain, DRONE_COMMIT]
+      envs: [app_domain, DRONE_COMMIT, DRONE_STAGE_FINISHED]
       script:
-        - echo $$DRONE_COMMIT > /tmp/ruan.dev/newtest.id
+        - echo $${DRONE_COMMIT} > /tmp/ruan.dev/newertest.id
         - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
