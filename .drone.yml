@@ -21,8 +21,8 @@ steps:
 
   - name: dump-build-output
     image: alpine
-    environment:
-      - MYCOMMIT=ruan
+    #environment:
+    #  - MYCOMMIT=ruan
     commands: 
       - echo "commit id: ${MYCOMMIT}"
 
