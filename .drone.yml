@@ -24,7 +24,7 @@ steps:
     #environment:
     #  - MYCOMMIT=ruan
     commands: 
-      - echo "commit id: ${MYCOMMIT}"
+      - echo "commit id"
 
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
