@@ -18,7 +18,6 @@ steps:
       - echo export COMMIT_MESSAGE=$${DRONE_COMMIT_MESSAGE} >> $${BUILD_OUTPUT_FILE}
       - echo export COMMIT_ID=$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
       - echo export COMMIT_LINK=$${DRONE_REPO_LINK}/commit/$${DRONE_COMMIT_SHA} >> $${BUILD_OUTPUT_FILE}
-      - ls -la
 
   - name: transfer-content
     image: drillster/drone-rsync
@@ -57,6 +56,4 @@ steps:
       envs: [app_domain, CI_JOB_FINISHED]
       script:
         - echo export $${CI_JOB_FINISHED} >> $$BUILD_OUTPUT_FILE 
-        #- env #> /tmp/ruan.dev/env.sh
-        #- sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
