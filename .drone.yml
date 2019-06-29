@@ -50,6 +50,7 @@ steps:
       port: 22
       envs: [app_domain, DRONE_COMMIT]
       script:
+        - ls -la
         - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
