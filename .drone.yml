@@ -23,7 +23,7 @@ steps:
     image: alpine
     #environment:
     #  MYCOMMIT: "ruan"
-    commands: 
+    script: 
       - echo "commit id: $${DRONE_JOB_FINISHED}"
 
   - name: deploy-hugo-to-swarm
