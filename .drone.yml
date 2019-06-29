@@ -5,11 +5,12 @@ steps:
   - name: dump-build-output
     image: alpine
     environment:
-      COMMIT_ID: $${DRONE_COMMIT_LINK} 
+      OWNER: ruan 
     commands:
       - env
       - export
-      - echo $${COMMIT_ID} > drone.commit_id
+      - echo $${OWNER} > drone.owner
+      - echo $${DRONE_COMMIT_LINK} > drone.commit_link2
       - ls -la
 
   - name: transfer-content
