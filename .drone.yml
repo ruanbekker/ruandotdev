@@ -48,13 +48,13 @@ steps:
       key:
         from_secret: swarm_key
       port: 22
-      envs: [app_domain]
-      #script:
-      #  - env #> /tmp/ruan.dev/env.sh
-      #  - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
-      #  - bash /tmp/ruan.dev/deploy.sh
-    commands:
-      - ls -la
-      - env
-      - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
-      - bash /tmp/ruan.dev/deploy.sh
+      envs: [app_domain, drone_commit]
+      script:
+        - env #> /tmp/ruan.dev/env.sh
+        - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
+        - bash /tmp/ruan.dev/deploy.sh
+    #commands:
+    #  - ls -la
+    #  - env
+    #  - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
+    #  - bash /tmp/ruan.dev/deploy.sh
