@@ -26,7 +26,7 @@ steps:
     commands:
       - env
       - export
-      - echo commit id: $${DRONE_JOB_FINISHED}
+      - echo $${MYCOMMIT}
 
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
