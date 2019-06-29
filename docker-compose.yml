@@ -19,7 +19,7 @@ services:
       - CI_BUILD_LINK=${CI_BUILD_LINK}
       - COMMIT_MESSAGE=${COMMIT_MESSAGE}
       - COMMIT_ID=${COMMIT_ID}
-      - COMMIT_LINK=$${COMMIT_LINK}
+      - COMMIT_LINK=${COMMIT_LINK}
 
     deploy:
       mode: replicated
