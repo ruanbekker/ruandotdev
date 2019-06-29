@@ -21,9 +21,11 @@ steps:
 
   - name: dump-build-output
     image: alpine
-    #environment:
-    #  MYCOMMIT: "ruan"
-    script: 
+    environment:
+      MYCOMMIT: ruan
+    commands:
+      - env
+      - export
       - echo "commit id: $${DRONE_JOB_FINISHED}" > /tmp/ruan.dev/foo.txt
 
   - name: deploy-hugo-to-swarm
