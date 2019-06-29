@@ -22,7 +22,7 @@ steps:
   - name: dump-build-output
     image: alpine
     environment:
-      MYCOMMIT: $$DRONE_COMMIT_SHA
+      - MYCOMMIT=$$DRONE_COMMIT_SHA
     commands: 
       - echo "commit id: ${MYCOMMIT}"
 
