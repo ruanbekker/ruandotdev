@@ -9,7 +9,7 @@ steps:
       APP_DOMAIN:
         from_secret: app_domain
     commands:
-      - echo DOMAIN=$${APP_DOMAIN > $${BUILD_OUTPUT_FILE}
+      - echo DOMAIN=$${APP_DOMAIN} > $${BUILD_OUTPUT_FILE}
       - echo CI_SYSTEM_HOST=$${DRONE_SYSTEM_HOST} >> $${BUILD_OUTPUT_FILE}
       - echo CI_JOB_STARTED=$${CI_JOB_STARTED} >> $${BUILD_OUTPUT_FILE}
       - echo CI_REPO_LINK=$${DRONE_REPO_LINK} >> $${BUILD_OUTPUT_FILE}
