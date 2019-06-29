@@ -37,6 +37,7 @@ steps:
       port: 22
       envs: [app_domain]
       script:
+        - export DRONE_COMMIT_SHA=$$DRONE_COMMIT_SHA
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
     
