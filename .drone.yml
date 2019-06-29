@@ -40,7 +40,7 @@ steps:
       port: 22
       envs: [app_domain]
       script:
-        - env > /tmp/ruan.dev/env.sh
+        - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
         - bash /tmp/ruan.dev/deploy.sh
     
