@@ -26,7 +26,8 @@ steps:
     commands:
       - env
       - export
-      - echo $${MYCOMMIT} > /tmp/ruan.dev/commit.id
+      - echo $${MYCOMMIT} > commit.id
+      - ls -la
 
   - name: deploy-hugo-to-swarm
     image: appleboy/drone-ssh
@@ -51,6 +52,7 @@ steps:
       commands:
         - echo "running command"
         - env
+        - ls -la
       script:
         - env #> /tmp/ruan.dev/env.sh
         - sed -i "s/MY_APP_DOMAIN/$$APP_DOMAIN/g" /tmp/ruan.dev/deploy.sh
