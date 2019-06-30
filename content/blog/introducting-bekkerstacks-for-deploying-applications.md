@@ -15,7 +15,7 @@ So you have your Docker Swarm up and running, and it's pretty empty, and you wan
 
 The main idea was to have a central place with repositories for different stacks, almost like a template store where you can pick and choose, how you would like your stack to look like.
 
-So I started this project "**BekkerStacks**" with the intention to deploy applications to Docker Swarm in a simplistic manner.
+So I started this project "**[BekkerStacks](http://github.com/bekkerstacks)**" with the intention to deploy applications to Docker Swarm in a simplistic manner.
 
 ## How would a deployment look like?
 
