@@ -70,6 +70,7 @@ Set the environment variable:
 ```
 $ export DOMAIN=myswarm.dev
 ```
+<p>
 
 Deploy Traefik:
 
@@ -87,6 +88,7 @@ Creating service proxy_traefik
 traefik ui is available at:
 - http://traefik.localhost
 ```
+<p>
 
 By default the authentication for Traefik's UI will be admin/admin, you can change the default behavior by checking out the [docs](https://github.com/bekkerstacks/traefik#basic-auth-for-dashboard)
 
@@ -107,6 +109,7 @@ The mode and feature will be controlled by the environment variables:
 BSTACKS_MODE - (http/https)
 BSTACKS_FEATURE - (dashboards)
 ```
+<p>
 
 Let's deploy the monitoring stack in http mode with dashboards pre-configured:
 
@@ -135,10 +138,11 @@ Creating service mon_blackbox-exporter
 Creating service mon_alertmanager
 
 Stack is available at:
-- http:/grafana.localhost
+- http://grafana.localhost
 - http://alertmanager.localhost
 - http://prometheus.localhost
 ```
+<p>
 
 Accessing Grafana with the default configuration (admin/admin) will ask you to change the password.
 
