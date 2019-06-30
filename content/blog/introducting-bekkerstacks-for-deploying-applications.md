@@ -59,6 +59,7 @@ Get the sources:
 ```
 $ git clone https://github.com/bekkerstacks/traefik
 ```
+<p>
 
 The compose file relies on a environment variable `DOMAIN` to map the frontend rules to Traefik.
 

@@ -23,7 +23,7 @@ services:
 
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 2
       labels:
         - traefik.frontend.rule=Host:$DOMAIN
         - traefik.enable=true
