@@ -7,6 +7,8 @@ tags = ["docker", "bekkerstacks"]
 title = "Introducing BekkerStacks for Easy Application Deployment"
 +++
 
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/ruanbekker) [![Slack Status](https://linux-hackers-slack.herokuapp.com/badge.svg)](https://linux-hackers-slack.herokuapp.com/) [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://linux-hackers.slack.com/) [![Drone.io Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev)
+
 ![docker-swarm-image-from-docker.com](https://user-images.githubusercontent.com/50801771/60388635-c5830680-9ab4-11e9-8a11-dd0de95139f2.png)
 
 ## BekkerStacks, what is it?
