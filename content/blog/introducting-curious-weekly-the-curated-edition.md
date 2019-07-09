@@ -7,6 +7,8 @@ tags = ["curated", "newsletter"]
 title = "Introducing Curious-Weekly a Curated List of Awesome Stuff"
 +++
 
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/ruanbekker) [![Slack Status](https://linux-hackers-slack.herokuapp.com/badge.svg)](https://linux-hackers-slack.herokuapp.com/) [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://linux-hackers.slack.com/) [![Drone.io Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev) ![GitHub followers](https://img.shields.io/github/followers/ruanbekker.svg?label=Follow&style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/ruanbekker.svg?style=social)
+
 <img width="744" alt="image" src="https://user-images.githubusercontent.com/567298/60920147-cdeaf680-a297-11e9-9fe4-28432f9fff99.png">
 
 ## Curious Weekly
