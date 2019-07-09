@@ -1,6 +1,6 @@
 +++
 categories = ["curious-weekly"]
-date = "2019-07-09"
+date = "2019-07-09T20:00:00"
 description = "curated articles of awesome stuff that I stumble upon"
 slug = "introducting-curious-weekly-the-curated-edition"
 tags = ["curated", "newsletter"]
@@ -23,4 +23,4 @@ This page will serve as the index page and will be linked below, but all curated
 
 ## Archive
 
-* [The Samurai Tutrtle - 2019.07.09]()
+* [The Samurai Tutrtle - 2019.07.09](https://ruan.dev/blog/2019/07/curious-weekly-1-the-samurai-turtle/?pk_campaign=index-page&pk_kwd=curious-weekly)

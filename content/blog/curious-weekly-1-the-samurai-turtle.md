@@ -1,19 +1,19 @@
 +++
 categories = ["curious-weekly"]
-date = "2019-07-09"
+date = "2019-07-09T20:30:00"
 description = "curious-weekly-1-the-samurai-turtle aws kubernetes lambda docker swarm serverless devops"
 slug = "curious-weekly-1-the-samurai-turtle"
 tags = ["curated", "docker", "kubernetes", "devops", "aws", "containers", "serverless"]
 title = "#1 Curious Weekly: The Samurai Turtle"
 +++
 
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/ruanbekker) [![Slack Status](https://linux-hackers-slack.herokuapp.com/badge.svg)](https://linux-hackers-slack.herokuapp.com/) [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://linux-hackers.slack.com/) [![Drone.io Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev) ![GitHub followers](https://img.shields.io/github/followers/ruanbekker.svg?label=Follow&style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/ruanbekker.svg?style=social)
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/ruanbekker) [![Slack Status](https://linux-hackers-slack.herokuapp.com/badge.svg)](https://linux-hackers-slack.herokuapp.com/) [![Chat on Slack](https://img.shields.io/badge/chat-on_slack-orange.svg)](https://linux-hackers.slack.com/) [![Drone.io Build Status](https://cloud.drone.io/api/badges/ruanbekker/ruandotdev/status.svg)](https://cloud.drone.io/ruanbekker/ruandotdev) ![GitHub followers](https://img.shields.io/github/followers/ruanbekker.svg?label=Follow&style=social) [![Twitter Follow](https://img.shields.io/twitter/follow/ruanbekker.svg?style=social)](https://twitter.com/ruanbekker)
 
 <img width="744" alt="image" src="https://user-images.githubusercontent.com/567298/60919984-6765d880-a297-11e9-8c9c-e344281ef6db.png">
 
 ## Welcome
 
-Welcome to the 1st post of [#curious-weekly]()! In this week we have some really awesome content:
+Welcome to the 1st post of [#curious-weekly](https://ruan.dev/categories/curious-weekly/?pk_campaign=curious-weekly-category&pk_kwd=ruan.dev)! In this week we have some really awesome content:
 
 ## AWS
 
@@ -156,4 +156,8 @@ Vagrant, Docker, Golang, DynamoDB, Python and Bash:
 * [Using Python to Sign Elasticsearch Requests for AWS IAM with the Requests Package](https://gist.github.com/ruanbekker/b61b2b696ec94eb50f5b91ba0efa85d2)
 * [Using Bash to Select Random Numbers](https://gist.github.com/ruanbekker/27b64820907a8853e676bdef723d1909)
 
+## Thanks
 
+What do you think of the curated list? Feel free to reach out to me on twitter:
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/ruanbekker.svg?style=social)](https://twitter.com/ruanbekker)
