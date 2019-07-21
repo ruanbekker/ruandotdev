@@ -25,7 +25,7 @@ highlightjs = true
 lang = "en"
 timeZone = "Africa/Johannesburg"
 footertext = ""
-
+NewsletterSignup = "https://tinyletter.com/ruanbekker"
 # Social icons appear in introduction and contact section. Input your username only, eg "you" as it appears in "twitter.com/you"
 linkedin      = "ruanbekker"
 twitter       = "ruanbekker"
