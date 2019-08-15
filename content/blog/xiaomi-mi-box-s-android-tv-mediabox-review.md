@@ -13,7 +13,7 @@ title = "Review of the Xiaomi MiBox S Android TV MediaBox"
 
 Photo by freestocks.org on Unsplash
 
-### Mediabox Choices
+## Mediabox Choices
 
 So you are perhaps thinking of getting a **Android TV Mediabox**, but so many options that's in the market.
 
@@ -106,6 +106,8 @@ I don't have any issues so far with it and if you consider getting it, I would *
 Have a look at Tech4All's video review on the Xiaomi MiBox:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uzjC64FKzWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p></p>
 
 ## Where can you get it
 
