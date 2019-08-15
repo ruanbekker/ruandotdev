@@ -13,7 +13,7 @@ title = "Review of the Xiaomi MiBox S Android TV MediaBox"
 
 Photo by freestocks.org on Unsplash
 
-### The Xiaomi MiBox-S Android TV Mediabox
+### Mediabox Choices
 
 So you are perhaps thinking of getting a **Android TV Mediabox**, but so many options that's in the market.
 
