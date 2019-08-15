@@ -13,23 +13,25 @@ title = "Review of the Xiaomi MiBox S Android TV MediaBox"
 
 Photo by freestocks.org on Unsplash
 
-## The Xiaomi-MiBox-S-Android-TV Mediabox
+### The Xiaomi MiBox-S Android TV Mediabox
 
-So you are perhaps thinking of getting a Android TV Mediabox, but so many options that's in the market.
+So you are perhaps thinking of getting a **Android TV Mediabox**, but so many options that's in the market.
 
 If you are looking for something that's not so expensive, responsive, simplicity and looking for applications such as
-Netflix, Youtube, DSTV Now, Showmax, etc. This device get's hands down my vote to go for!
+Netflix, Youtube, DSTV Now, Showmax, etc. 
+
+This device get's hands down my **vote to go for**!
 
 ## Home Entertainment
 
-This is my review on the Xiaomi MiBox S Android TV Mediabox.
+This is my review on the **Xiaomi MiBox S Android TV Mediabox**.
 
 For some time I had the MyGica Android Mediabox, which works fine, but since the device is not certified by Google,
 Netflix and DSTV Now is not an option, and since I have a subscription for that, it's annoying having to switch devices,
 depending on what you want to watch.
 
-So I was looking for something simple that is future rich, and the Xiaomi MiBox S, gave me what I wanted, and I must
-admit, I am pretty impressed with it. The 3rd day that I have it and super impressed, no issues at all.
+So I was looking for something **simple** that is **feature rich**, and the Xiaomi MiBox S, gave me what I wanted, and I must
+admit, I am pretty **impressed** with it. The 3rd day that I have it and super impressed, no issues at all.
 
 A must buy from me!
 
@@ -49,7 +51,7 @@ And some features that they provide on the back of the box:
 
 ## Features
 
-So let's look at some of the features that the Xiaomi MiBox S Android TV has:
+So let's look at some of the **features** that the Xiaomi MiBox S Android TV has:
 
 * Chromecast Built In
 * 4K Ultra HD + HDR
@@ -97,7 +99,7 @@ applications that I need, which in my case was:
 I have everything I need in one place. The UI is really clean and responsive and also quite snappy. The GPU allows you
 to play games on it, but that was not the reason I got it, so have not tried to play any games on it.
 
-I don't have any issues so far with it and if you consider getting it, I would definitely say it's worth the buy. 
+I don't have any issues so far with it and if you consider getting it, I would **definitely** say it's **worth the buy**. 
 
 ## Where can you get it
 
