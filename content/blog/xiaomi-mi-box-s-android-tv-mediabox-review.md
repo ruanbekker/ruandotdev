@@ -101,6 +101,12 @@ to play games on it, but that was not the reason I got it, so have not tried to 
 
 I don't have any issues so far with it and if you consider getting it, I would **definitely** say it's **worth the buy**. 
 
+## Video Review
+
+Have a look at Tech4All's video review on the Xiaomi MiBox:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uzjC64FKzWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Where can you get it
 
 If you are from South Africa, you can check at:
