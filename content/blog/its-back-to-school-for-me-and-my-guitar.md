@@ -48,7 +48,7 @@ Back in December when I bought my new guitar (Fender, Mexican Stratocaster):
 
 ## A ha Moment
 
-So I've been working myself to the bone, and realized that I should get another hobby because burning yourself out is a bad thing, and you could potentially be less productive at work. So just before I got to the burnout zone, I really felt down and felt like I don't have a direction in life. 
+So I've been working myself to the bone, and realized that I should get another hobby because burning yourself out is a bad thing, and you could potentially be less productive at work. So just before I got to the burnout zone, I really felt down and felt like its time for a change. 
 
 So I was browsing on instagram and I stumbled upon a guitar cover of Guns & Roses - November Rain by [Kfir Ochaion](https://www.youtube.com/channel/UCh5zlvB1pZyU3KYjEPC38KQ) (he is brilliant btw)
 
