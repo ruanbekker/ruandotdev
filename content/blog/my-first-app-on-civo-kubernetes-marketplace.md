@@ -45,18 +45,41 @@ Download the kube config and set it to your environment:
 $ export KUBECONFIG="/Users/ruan.bekker/Downloads/civo-mongodb-kubeconfig"
 ```
 
-View the pods:
+View all the resources:
 
 ```
-$ kubectl get pods
-NAME                       READY   STATUS    RESTARTS   AGE
-mongodb-747f7fbb99-2njgv   1/1     Running   0          49m
+$ kubectl get all
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/mongodb-747f7fbb99-2njgv   1/1     Running   0          100m
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)     AGE
+service/kubernetes   ClusterIP   192.168.128.1   <none>        443/TCP     100m
+service/mongodb      ClusterIP   None            <none>        27017/TCP   100m
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/mongodb   1/1     1            1           100m
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/mongodb-747f7fbb99   1         1         1       100m
+```
+
+Get the MongoDB root username and password:
+
+```
+$ kubectl get deployments -o json | jq -r '[.items[] | {name:.metadata.name, username:.spec.template.spec.containers[].env[0].value, password:.spec.template.spec.containers[].env[1].value}]'
+[
+  {
+    "name": "mongodb",
+    "username": "dBhyAWLGjZTSJ2zPrTK2EC6SHrwEHR",
+    "password": "UVLL13yEOj0wAgLo9Urtm7QAVALhmU"
+  }
+]
 ```
 
 Access MongoDB:
 
 ```
-$ kubectl exec -it mongodb-747f7fbb99-2njgv -- mongo
+$ kubectl exec -it mongodb-747f7fbb99-2njgv -- mongo mongodb://dBhyAWLGjZTSJ2zPrTK2EC6SHrwEHR:UVLL13yEOj0wAgLo9Urtm7QAVALhmU@localhost:27017/
 MongoDB shell version v4.2.0
 connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
 Implicit session: session { "id" : UUID("f399f513-fa11-4728-8302-c27556ffbd22") }
@@ -64,8 +87,17 @@ MongoDB server version: 4.2.0
 Welcome to the MongoDB shell.
 For interactive help, type "help".
 
-> use admin
-switched to db admin
+> use person
+switched to db person
+
+> db.collection1.insert({"name": "ruan"})
+WriteResult({ "nInserted" : 1 })
+
+> db.collection1.find()
+{ "_id" : ObjectId("5d9dea6a7dd9bd2d6df50727"), "name" : "ruan" }
+
+> exit
+bye
 ```
 
 ## Thanks
