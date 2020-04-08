@@ -3,7 +3,7 @@ date = "2019-06-23T14:06:30-08:00"
 title = "about"
 +++
 
-I'm a Systems Development Engineer at [JUMO](https://jumo.world/?source=ruan.dev)
+I'm a DevOps Engineer at [Mama Money](https://www.mamamoney.co.za/?source=ruan.dev)
 
 I have a passion for problem solving, building things and making businesses succeed. I'm madly curious by heart, so I am very hungry for knowledge and you will always find my trying and testing out new things to stay ahead of the game.
 
